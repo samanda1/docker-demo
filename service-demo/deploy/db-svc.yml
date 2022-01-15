@@ -4,12 +4,13 @@ metadata:
   name: mysql
   labels:
     name: mysql
-    app: demo  
+    app: demo
 spec:
-  ports:
-  - port: 3306
-    name: mysql
-    targetPort: 3306
+  type: ClusterIP
   selector:
     name: mysql
     app: demo
+  ports:
+    - port: 3306
+      targetPort: 3306
+      name: mysql
